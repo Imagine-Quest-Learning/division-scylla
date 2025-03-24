@@ -55,7 +55,6 @@ public class DivisionAttack : MonoBehaviour
 
     void NextQuestion(){
 
-        Debug.Log("Static constructor running!");
         //new generated question
         x = Random.Range(1,15);
         y = Random.Range(0,15);
