@@ -7,5 +7,9 @@ public class Menu : MonoBehaviour
 {
     public void OnClickStart(){
         SceneManager.LoadScene(1);
-    }   
+    } 
+
+    public void OnClickTutorial(){
+        SceneManager.LoadScene(2);
+    } 
 }
