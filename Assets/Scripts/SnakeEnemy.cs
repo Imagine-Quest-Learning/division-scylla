@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// controls visuals and logical of snake enemy health
 public class SnakeEnemy : MonoBehaviour
 {
     public int baseHealth = 100;
@@ -13,16 +14,6 @@ public class SnakeEnemy : MonoBehaviour
     {
         currentHealth = baseHealth;
 		healthBar.SetMaxHealth(baseHealth);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //temporary - to replace with quick-time attack
-        if (Input.GetKeyDown(KeyCode.Space))
-		{
-			TakeDamage(20);
-		}
     }
 
     public void TakeDamage(int damage)

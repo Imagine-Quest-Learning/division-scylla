@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// controls visuals and logical of timer bar
 
 public class TimerController : MonoBehaviour
 {
 
-    
     public Image timeBar;
     public float timeRemaining;
     public float timeMax;

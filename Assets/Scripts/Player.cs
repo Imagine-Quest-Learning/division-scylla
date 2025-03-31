@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// controls visuals and logical of player health
 public class Player : MonoBehaviour
 {
     public GameObject[] hearts;
@@ -11,12 +12,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //temporary - to replace with quick-time attack
-        if (Input.GetKeyDown(KeyCode.Space))
-		{
-			TakeDamage(1);
-		}
-
+        //removes one of players lives visually
         if (life<1){
             Destroy(hearts[0].gameObject);
             //set game over

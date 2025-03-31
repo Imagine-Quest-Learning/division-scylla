@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// controls visuals and logical of health bar
 public class HealthBar : MonoBehaviour
 {
-	public Slider slider;
-	public Gradient gradient;
-	public Image fill;
+	public Slider slider; // controls amount of health visually
+	public Gradient gradient; // gradient going from grey (high health) to red (low health)
+	public Image fill; // display health amount
 
 
 	public void SetHealth(int health){

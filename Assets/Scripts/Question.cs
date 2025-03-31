@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Main logic of the game and the question generator/verifyer
 public class DivisionAttack : MonoBehaviour
 {
     [SerializeField] InputField answer;
@@ -17,7 +18,7 @@ public class DivisionAttack : MonoBehaviour
     int x;//second term in question
     int y;//valid answer
     int z; //first term in question
-    bool canAnswer = true;
+    bool canAnswer = true; // keep player from answering when out of time
 
     // Start is called before the first frame update
     void Start()
@@ -45,13 +46,12 @@ public class DivisionAttack : MonoBehaviour
     }
 
     void CheckAnswer(){
-        string playerAnswer = answer.text;
+        string playerAnswer = answer.text;//captures player''s answer
 
         if(playerAnswer == y.ToString()){
             //snake lose health and player is given next question
             attack = (int)Mathf.Floor(baseAttack * (timer.timeRemaining/timer.timeMax));
             snake.TakeDamage(attack);
-            //answer.Select();
             NextQuestion();    
         }else{
             //player lose life for wrong answer
