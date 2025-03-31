@@ -10,6 +10,8 @@ public class DivisionAttack : MonoBehaviour
     [SerializeField] Text question;
     public SnakeEnemy snake;
     public Player player;
+    public LoseScreenController lose;
+    public WinScreenController win;
     public TimerController timer;
     public float timeMax = 25;
     float baseAttack = 20;
@@ -18,7 +20,7 @@ public class DivisionAttack : MonoBehaviour
     int x;//second term in question
     int y;//valid answer
     int z; //first term in question
-    bool canAnswer = true; // keep player from answering when out of time
+    bool canAnswer = true; // lock/unlock input field for answers
 
     // Start is called before the first frame update
     void Start()
@@ -31,13 +33,22 @@ public class DivisionAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer.timeRemaining <= 0)
+        if (timer.timeRemaining <= 0 && canAnswer)
         {
             // for when timer runs out
             canAnswer = false;
             player.TakeDamage(1);
-            NextQuestion();
-            return;
+
+            //Check if player lost and display game over screen if they did
+            if (player.life<=0){
+                GameOver();
+                return;
+            }else{
+
+                //moves on to next question
+                NextQuestion();
+                return;
+            }           
         }
         if (Input.GetKeyDown(KeyCode.Return) && canAnswer)
 		{
@@ -49,15 +60,33 @@ public class DivisionAttack : MonoBehaviour
         string playerAnswer = answer.text;//captures player''s answer
 
         if(playerAnswer == y.ToString()){
+
             //snake lose health and player is given next question
             attack = (int)Mathf.Floor(baseAttack * (timer.timeRemaining/timer.timeMax));
             snake.TakeDamage(attack);
-            NextQuestion();    
+
+            //Check if player won and display game won screen if they did
+            if (snake.currentHealth<=0){
+                GameWin();
+                return;
+            }else{
+
+                //moves on to next question
+                NextQuestion();
+                return;
+            }   
         }else{
+
             //player lose life for wrong answer
             player.TakeDamage(1);
-            question.color = Color.red; 
-                
+
+            //Check if player lost and display game over screen if they did
+            if (player.life<=0){
+                GameOver();
+                return;
+            }
+            
+            question.color = Color.red;    
             answer.text = "";
             answer.Select();
             answer.ActivateInputField();  
@@ -82,5 +111,15 @@ public class DivisionAttack : MonoBehaviour
         timer.ResetTimer();
         canAnswer = true;
         
+    }
+
+    void GameOver(){
+        canAnswer = false;
+        lose.ActivateScreen();
+    }
+
+    void GameWin(){
+        canAnswer = false;
+        win.ActivateScreen();
     }
 }
