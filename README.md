@@ -24,7 +24,7 @@ The repo includes the following scenes.
 
 * **Scene0Menu** (<a target="_blank" href="./Assets/Scenes/Menu.unity">Source</a>) - This is the main entry point for the game. **Play this scene first**.
 * **Scene1Tutorial** (<a target="_blank" href="./Assets/Scenes/tutorial.unity">Source</a>) - This gives some context of the story to the player and how to play the game.
-* **Scene2Game** (<a target="_blank" href=".Assets/Scenes/sample-snake.unity">Source</a>) - The core game loop.
+* **Scene2Game** (<a target="_blank" href="./Assets/Scenes/sample-snake.unity">Source</a>) - The core game loop.
 
 ## Configuration
 
