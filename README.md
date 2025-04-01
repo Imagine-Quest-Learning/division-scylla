@@ -14,17 +14,17 @@ This is a quick-time division game with inspiration from the appearance of Scyll
 - [Scenes](#scenes)
 - [Configuration](#configuration)
 - [Getting Started](#getting-started)
-    + [Setup Unity](setup-unity)
-    + [Playing the Game](playing-the-game)
+    + [Setup Unity](#setup-unity)
+    + [Playing the Game](#playing-the-game)
 - [Tutorials](#tutorials)
 
 ## Scenes
 
 The repo includes the following scenes.
 
-* **Scene0Menu** (<a target="_blank" href="./division-scylla/Assets/Scenes/Menu.unity">Source</a>) - This is the main entry point for the game. **Play this scene first**.
-* **Scene1Tutorial** (<a target="_blank" href="./division-scylla/Assets/Scenes/tutorial.unity">Source</a>) - This gives some context of the story to the player and how to play the game.
-* **Scene2Game** (<a target="_blank" href="./division-scylla/Assets/Scenes/sample-snake.unity">Source</a>) - The core game loop.
+* **Scene0Menu** (<a target="_blank" href="./Assets/Scenes/Menu.unity">Source</a>) - This is the main entry point for the game. **Play this scene first**.
+* **Scene1Tutorial** (<a target="_blank" href="./Assets/Scenes/tutorial.unity">Source</a>) - This gives some context of the story to the player and how to play the game.
+* **Scene2Game** (<a target="_blank" href=".Assets/Scenes/sample-snake.unity">Source</a>) - The core game loop.
 
 ## Configuration
 
